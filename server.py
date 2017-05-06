@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from typograph import process_text
 
 
 app = Flask(__name__)
@@ -10,7 +11,7 @@ def process_form():
         return render_template('form.html')
     if request.method == 'POST':
         users_text = request.form['text']
-        processed_text = users_text.upper()        
+        processed_text = process_text(users_text)
         return processed_text
 
 
