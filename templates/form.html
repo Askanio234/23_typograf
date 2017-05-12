@@ -53,7 +53,7 @@
                 url : "/",
                 data: $('form').serialize(),
                 success : function(data) {
-                    $('#processed-text').html(data);
+                    $('#processed-text').html(data["text"]);
                 }
             });
         });

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from typograph import process_text
 
 
@@ -12,7 +12,7 @@ def process_form():
     if request.method == 'POST':
         users_text = request.form['text']
         processed_text = process_text(users_text)
-        return processed_text
+        return jsonify(text=processed_text)
 
 
 if __name__ == '__main__':
